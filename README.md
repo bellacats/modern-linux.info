@@ -1,118 +1,75 @@
-A warm welcome to Learning Modern Linux and I am glad that we will walk this 
-journey together for a bit. This book is for you, if you’ve been using 
-Linux already for a little bit and looking for a structured approach to dive 
-deeper in a hands-on fashion or already have more experience and want to get 
-some tips and tricks to improve your flow when working with Linux. For example, 
-in a professional setup, such as development or operations. We will focus on 
-using Linux for your everydays needs, from development to office-related tasks
-rather than on the system administration side of things.
+# 모던 리눅스 교과서
+## 백엔드, 클라우드, 데브옵스를 위한 기본 명령어, 커널 등 최신 리눅스 필수 지식
 
-Along the way, you'll gain hands-on experience with modern Linux terminals and
-shells, and learn how to manage your workloads in a modern way.
-You'll understand how to run Linux applications in modern ways by using 
-containers, `systemd`, modern filesystems, and immutable distros such as 
-Flatcar and Bottlerocket.
+개발이나 운영에서 리눅스를 사용하며 더 깊이 파고들기 위한 체계적인 접근 방법이 필요하다면 이 책은 바로 여러분을 위한 것이다. 이 책의 저자인 마이클 하우센블라스는 오픈소스 운영체제 리눅스를 활용해 작업 흐름을 향상시키는 팁과 요령을 제공한다. 또한 개발부터 업무 관련 작업에 이르기까지, 개발자, 소프트웨어 아키텍트, 사이트 신뢰성 엔지니어 등 어느 누구에게든 여러분 각자의 일상적인 필요에 맞게 리눅스를 사용하는 방법을 집중해서 다룬다. 모던 리눅스 터미널과 셸을 직접 실습해보거나 작업 부하를 관리하는 방법도 설명한다. 또한 컨테이너, systemd, 모던 파일시스템, 그리고 플랫카나 보틀로켓 같은 변경 불가한 배포판을 사용해 리눅스 애플리케이션을 실행하는 방법도 살펴본다.
+이 책의 추가 자료는 다음에서 확인할 수 있다.
+1.	관련 기사와 도구의 링크 모음:  references 
+2.	코드와 구성 파일: Code snippets and configuration files 
 
-![book cover](lml-cover.png)
+## 1장 리눅스 소개
+모던 리눅스(Modern Linux)라는 용어의 ‘모던’이라는 단어가 대체 무엇을 의미하는지를 이해하고 지난 30여 년간 벌어진 중요한 사건과 발전 단계를 살펴본 후 리눅스의 배경을 개괄적으로 이야기한다. 또한 일반적으로 운영체제의 역할이 무엇이며 리눅스가 어떻게 이 역할을 수행하는지를 배운다. 또한 리눅스 배포판과 리소스 가시성(resource visibility)이 무엇을 의미하는지 간략하게 살펴볼 예정이다.
+• 모던 환경이란 무엇인가
+• (지금까지의) 리눅스 이야기
+• 운영체제는 왜 필요한가
+• 리눅스 배포판
+• 리소스 가시성
 
-As of April 2022 the book is [available via O'Reilly](https://learning.oreilly.com/library/view/learning-modern-linux/9781098108939/) 
-and if you have feedback, please share via [modern-linux@pm.me](mailto:modern-linux@pm.me).
+## 2장 리눅스 커널
+리눅스 커널이 무엇인지, 커널 구성 요소뿐 아니라 전체로서 이를 어떻게 생각해야 하는지 등을 살펴본다. 전체 리눅스 아키텍처와 리눅스 커널이 수행하는 필수 역할에 대해 배운다. 또한 전반적인 리눅스 아키텍처와 리눅스 커널이 수행하는 필수 역할에 대해 알아본다. 이 장의 주요 내용 중 하나는 커널이 모든 핵심 기능을 제공하지만 커널이 그 자체로 운영체제는 아니며 그저 운영체제의 매우 중요한 부분에 불과하다는 점이다. 
+•	리눅스 아키텍쳐
+•	CPU 아키텍처
+•	커널 구성요소
+•	커널 확장
 
-Supporting material for the book is also available:
+## 3장 셸과 스크립팅
+터미널, 즉 명령행 인터페이스(command-line interface)(이하 CLI)를 사용할 수 있는 셸을 이용해 리눅스와 상호작용하는 데 중점을 둔다. 그리고 피시 셸(Fish Shell)같이 현대적이고 인간 친화적인 셸을 살펴본 후 로컬이나 원격에서 여러 세션으로 작업할 수 있게 해주는 터미널 멀티플렉서(tmux)를 사용해 CLI에서 효과적으로 작업하는 방법에 대한 주제로 넘어간다. 마지막에서는 셸에서 스크립트를 사용해 작업을 자동화하는 데 집중한다.
+•	인간 친화적인 셸
+•	터미널 멀티플렉서
+•	스크립팅
 
-1. A collection of [references](references) containing links to articles and tools
-1. [Code snippets and configuration files](https://github.com/mhausenblas/modern-linux.info/tree/main/code)
+## 4장 접근 제어
+사용자와 함께 일반적으로 리소스, 특히 파일에 대한 접근 제어에 대해 살펴본다.
+•	사용자
+•	권한
+•	고급 권한 관리
+•	우수 사례
 
+## 5장 파일시스템
+파일과 파일시스템에 집중해 “모든 것이 파일이다”라는 추상적 개념을 리눅스가 구현하는 방법을 살펴본다. 다음으로 커널이 프로세스나 장치에 대한 정보를 노출하는 데 사용하는 특수 목적 파일시스템을 알아본다. 또한 주로 문서 등과 연관되어 사용하는 일반 파일과 파일시스템을 살펴본 후 파일시스템의 옵션들을 비교하고 일반적인 작업들을 살펴본다.
+•	가상 파일시스템 (VFS)
+•	의사 파일시스템
+•	일반 파일
 
-## Coverage
+## 6장 애플리케이션, 패키지 관리, 컨테이너
+리눅스의 애플리케이션을 알아본다. 또한 리눅스가 어떻게 시작되고 우리가 의존하는 모든 서비스를 제공하는지를 다룬다. 그런 다음 패키지 관리로 이동해 대략적인 애플리케이션 공급망에 대해 검토해보고 서로 다른 부분이 무엇인지 확인해본다. 이후에는 컨테이너가 무엇이고 어떻게 작동하는지에 초점을 맞춘다. 6장을 마무리하면서 특히 데스크톱 환경에서 리눅스 앱을 관리하는 현대적인 방법도 살펴볼 것이다.
+•	리눅스 시작 프로세스
+•	리눅스 애플리케이션 공급망
+•	패키지와 패키지 관리자
+•	컨테이너
+•	최신 패키지 관리자
 
-### Ch 1: Introduction to Linux 
+## 7장 네트워킹
+리눅스 네트워킹에 대해 자세히 설명한다. 현대 환경에서 리눅스가 제공하는 네트워크 스택은 필수 구성요소로서, 이게 없다면 할 수 있는 일이 별로 없다. 클라우드 공급자의 인스턴스에 접근하거나 웹을 검색하거나 새 앱을 설치하려 할 때도 말이다.
+•	TCP/IP 스택
+•	DNS
+•	애플리케이션 계층 네트워킹
+•	고급 네트워크
 
-> We first discuss what "Modern" means in the context of the book. Then we provide a high-level Linux backstory, looking at important events and phases over the past 30 years. Further, you will learn what the role of an operating system is in general and how Linux goes about it. We have a quick look at what Linux distributions are and what resource visibility means.
+## 8장 관측가능성
+우리가 정보에 입각한 결정을 내릴 수 있도록 리눅스와 애플리케이션이 생성하는 다양한 시그널을 수집하고 사용하는 방법에 관한 내용을 다룬다. 예를 들면 프로세스가 소비하는 메모리 양을 파악하거나, 디스크 공간이 얼마나 빨리 소진되는지를 알아내거나, 보안상의 이유로 맞춤 이벤트에 대한 알림을 받는 등 말이다. 즉 우리는 커널에서부터 사용자를 대면하는 부분까지 스택 전체에서 어떤 일이 일어나는지에 대해 알 수 있어야 한다. 각 작업에 적합한 도구를 알고 사용할 수만 있어도 어느 정도는 해결되는 일이긴 하다.
+•	로깅
+•	모니터링
+•	고급 관측가능성
 
-* What are Modern Environments?
-* The Linux Story (So Far)
-* Why an Operating System at All?
-* Linux Distributions
-* Resource Visibility
+## 9장 심화 주제
+이 마지막 장은 약간 번잡하다. 가상 머신부터 보안, 그리고 리눅스를 사용하는 새로운 방법에 이르기까지 다양한 주제를 다룰 것이다. 9장의 주제에 공통점이 있다면 대부분 특정 사용 사례를 염두에 두거나 전문적인 설정에서 필요한 경우에만 관련이 있다는 점뿐이다.
+•	프로세스 간 통신 (IPC)
+•	가상 머신
+•	모던 리눅스 배포판
+•	선별된 보안 항목
+•	그 밖의 유망한 제품군
 
-### Ch 2: The Linux Kernel
-
-> In this chapter we discuss what the Linux kernel is and how you should be thinking about it as a whole as well as about its components. You will learn about the overall Linux architecture and the essential role the Linux kernel plays. One main takeaway of this chapter should be that while the kernel provides all the core functionality, on its own it is not the operating system but only a part of it.
-
-* Linux Architecture
-* CPU Architectures
-* Kernel Components
-* Kernel Extensions
-
-### Ch 3: Shells & Scripting
-
-> In this chapter we focus on interacting with Linux on the terminal, that is, via the shell which exposes a command line interface (CLI). Then we have a look at modern, human-friendly shells, such as the `fish` shell. Then, we move on to the topic of how to effectively work on the CLI using a terminal multiplexer (`tmux`), enabling you to work with multiple sessions, local or remote alike. In the last part of this chapter we focus on automating tasks in the shell using scripts.
-
-* Basics
-* Human-friendly Shells
-* Terminal multiplexer
-* Scripting
-
-### Ch 4: Access Control
-
-> In this chapter we discuss the topic of users and controlling access to resources in general and files in particular.
-
-* Users
-* Permissions
-* Advanced Permission Management
-* Good Practices
-
-### Ch 5: Filesystems
-
-> In this chapter we focus on files and filesystems. We look at how Linux implements the “everything is a file” abstraction. Next, we review special-purpose filesystems the kernel uses to expose information about processes or devices. We then move on to regular files and filesystems, something you would typically associate with documents, and compare filesystem options and discuss common operations.
-  
-* Basics
-* The Virtual File System (VFS)
-* Pseudo Filesystems
-* Regular Files
-
-### Ch 6: Applications, Package Management & Containers
-
-> In this chapter we talk about applications in Linux. We discuss how Linux starts up and brings all the services we depend on into being. We then move on to package management where we first review the application supply chain in general terms and see what the different moving parts are about. In the next part of the chapter we focus on containers, what they are and how they work. To round off this chapter we look at modern ways to manage Linux apps, especially in desktop environments.
-
-* Basics
-* The Linux Start-up Process
-* Linux Applications Supply Chains
-* Packages and Package Managers
-* Containers
-* Modern Package Managers
-
-### Ch 7: Networking
-
-> In this chapter we go into detail concerning Linux networking. In modern environments, the network stack that Linux provides is an essential component without few things are possible. No matter if you want to access an instance in your cloud provider of choice, or if you want to browse the Web or if you want to install a new app.
-
-* The TCP/IP Stack
-* The Domain Name System (DNS) 
-* Application Layer Networking
-* Advanced Network Topics
-
-### Ch 8: Observability
-
-> This chapter is all about gathering and using different signals that Linux and its applications generate to make informed decisions. For example, about figuring how much memory a process consumes, understand how soon you will run out of disk space or alert on custom event for security reasons. In other words: you need visibility into what’s going on across the stack, from the kernel to the user-facing parts and often it’s about knowing about and using the right tool for a task.
-
-* Basics
-* Logging
-* Monitoring
-* Advanced Observability
-
-### Ch 9: Advanced Topics
-
-> This chapter is a bit of a mixed bag. We cover a range of topics, from virtual machines to security to new ways how to use Linux. What the topics in this chapter have in common is that most of them are either only relevant for you if you have a specific use case in mind or you require them, in a professional setup.
-
-* Inter-process Communication (IPC)
-* Virtual Machines
-* Modern Linux Distros
-* Selected Security Topics
-* Other Modern and Future Offerings
-
-### Appendix A: How Tos
-> In this appendix I’ve compiled a list of recipes for common tasks. This is just a selection of recipes that I’ve gathered over time, tasks that I often carry out and like to have handy as a reference.
-
-### Appendix B: Modern Linux Tools
-> In this appendix we focus on modern Linux tools and commands some are drop-in replacements of existing commands, others are new ones. Most improve on the UX including easier usage and making use of colored output.
+## 부록 A 리눅스 작업에 유용한 치트시트
+일반 작업에 활용 수 있는 레시피 목록을 모았다. 이는 내가 오랜 시간 동안 수집한 레시피의 일부로서 자주 실행하고 참고용으로 쓰려고 수집한 것들이다.
+## 부록 B 모던 리눅스 도구
+모던 리눅스 도구와 명령에 중점을 둔다. 일부 명령은 기존 명령의 드롭인 교체이고 그 밖의 명령들은 새로 생긴 것이다. 여기에 나열된 대부분의 도구는 사용이 간편하며 컬러 출력값 사용을 비롯한 사용자 경험(UX)을 개선한 것이다.
